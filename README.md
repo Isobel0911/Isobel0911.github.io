@@ -2,7 +2,8 @@
 ## Project Proposal
 Introduction & Problem Definition
 The snake is a widely spread species across the world. Although many snake species do not possess fatal venom, several snake classes have poison in their venom that can impair human health severely. The symptoms include tissue death swelling, bleeding and destruction of blood cells, nerve damage and even death. According to a report, between 81,000-138,000 people die from snakebite each year. Many more survive but may do so with lasting disabilities or disfigurement. The staggering statistics of causality from snakebite makes it even more imperative to identify which snakes are harmless and which are venomous.
-### Data Collection
+
+## Data Collection
 Sanke Dataset from Kaggle: image dataset of various snake species found in India: 2044 files.
 We have around 87% trained data and 13% data for testing.
 
