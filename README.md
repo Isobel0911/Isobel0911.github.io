@@ -17,38 +17,61 @@ Our goal is to take in snake images and detect which one is venomous. From this 
 ### Project Proposal (October 7)
 
 Introduction & Background:	Jiaying Deng, Mingxuan Nie
+
 Problem Definition:	Jiaying Deng, Mingxuan Nie
+
 Methods:	Dian Yang, Ruochen Shu, Haosheng Wu
+
 Potential Dataset:	Haosheng Wu
+
 Potential Results & Discussion:	Jiaying Deng
+
 Video Creation & Recording:	Jiaying Deng
+
 GitHub Page:	Jiaying Deng
 
 ### Midterm Report (November 11)
 
 Model 1 (M1) Design & Selection:	All
+
 M1 Data Cleaning (due: Oct 14 AOE):	Haosheng Wu 
+
 M1 Data Visualization (due: Oct 14 AOE):	Haosheng Wu 
+
 M1 Feature Reduction (due: Nov 4 AOE):	Mingxuan Nie, Dian Yang, Ruochen Shu
+
 M1 Implementation & Coding (due: Nov 4 AOE):	Mingxuan Nie, Dian Yang, Ruochen Shu
+
 M1 Results Evaluation (due: Nov 4 AOE):	Mingxuan Nie, Dian Yang, Ruochen Shu
+
 Page Report & Video (due: Nov 11 AOE) ：Jiaying Deng
 
 
 ### Final Project (December 6 )
 
 Model 2 (M2) Design & Selection:	All
+
 M2 Data Cleaning (due: Nov 18 AOE):	Haosheng Wu 
+
 M2 Data Visualization (due: Nov 18 AOE):	Haosheng Wu 
+
 M2 Feature Reduction (due: Nov 18 AOE):	Mingxuan Nie, Dian Yang, Ruochen Shu
+
 M2 Implementation & Coding (due: Nov 18 AOE):	Mingxuan Nie, Dian Yang, Ruochen Shu
+
 M2 Results Evaluation (due: Nov 18 AOE):	Mingxuan Nie, Dian Yang, Ruochen Shu
 
+
 Model 3 (M3) Design & Selection:	All
+
 M3 Data Cleaning (due: Nov 25 AOE):	Haosheng Wu 
+
 M3 Data Visualization (due: Nov 25 AOE):	Haosheng Wu 
+
 M3 Feature Reduction (due: Nov 25 AOE):	Mingxuan Nie, Dian Yang, Ruochen Shu
+
 M3 Implementation & Coding (due: Nov 25 AOE):	Mingxuan Nie, Dian Yang, Ruochen Shu
+
 M3 Results Evaluation (due: Nov 25 AOE):	Mingxuan Nie, Dian Yang, Ruochen Shu
 
 Page Report & Video (due: Dec 6 AOE) ：Jiaying Deng
