@@ -8,7 +8,8 @@ The dataset is sourced from [Kaggle](https://www.kaggle.com/code/mpwolke/venomou
 
 ## Methods/Process
 The general approach of our project is supervised learning. Since the dataset we selected does not contain any numerical data, we will first preprocess the dataset and transfer the dataset into numerical value using the OrdinalEncoder in Python’s sklearn library. Then we will put the data into three models (Decision Tree, Random Forest, and Neural Network), and train the machine.
-Potential Results & Discussion
+
+## Potential Results & Discussion
 Our goal is to take in snake images and detect which one is venomous. From this process, we hope to build a reliable model that hits 90% accuracy on telling users whether the snake is venomous and therefore preventing imprudent approaches. 
 
 ## Timeline and Expected Responsibilities
