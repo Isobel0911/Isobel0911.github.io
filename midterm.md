@@ -1,1 +1,2 @@
 ## Midterm Report
+### Introduction / Background
