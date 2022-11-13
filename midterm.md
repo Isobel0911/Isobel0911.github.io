@@ -37,3 +37,9 @@ As can be seen from the accuracy plots, the model has a better performance on th
 <img src="https://github.com/Isobel0911/Isobel0911.github.io/blob/bdb053fbdf777ad43f335d445606267ca9c144a6/assets/css/Screenshot%202022-11-12%20205754.jpg" style="display: block; margin: auto;" />
 <img src="https://github.com/Isobel0911/Isobel0911.github.io/blob/bdb053fbdf777ad43f335d445606267ca9c144a6/assets/css/Screenshot%202022-11-12%20205809.jpg" style="display: block; margin: auto;" />
 <img src="https://github.com/Isobel0911/Isobel0911.github.io/blob/bdb053fbdf777ad43f335d445606267ca9c144a6/assets/css/Screenshot%202022-11-12%20205821.jpg" style="display: block; margin: auto;" />
+
+## Contribution Table
+_Haosheng Wu/Mingxuan Nie/Ruochen Shu_: Implement the supervised CNN model
+_Haosheng Wu_: Clean and preproccess the data
+_Dian Yang/Jiaying Deng_:Anaylsis the output of model and accuracy, evaluate current model
+
