@@ -30,7 +30,11 @@ For optimizer, we used Adam with a learning rate of 0.001, and we used cross ent
 
 ## Results and Discussion 🌟
 We used the accuracy and loss of the predictive model to measure its performance.
-As can be seen from the accuracy plots, the model has a better performance on the training dataset than the testing dataset, which is not surprising. It has an average training accuracy of 91.75% and an average testing accuracy of 55.36%. Similarly, the training loss is much lower than the testing loss, which are 0.21 and 2.75, respectively.
+For calculating accuracy, we counted the number of correctly predicted labels divided by the total number of samples. For calculating loss, we used the cross entropy loss function for neural network built in torch.nn. We then plotted the accuracy and loss for the training set and testing set.
+As can be seen from the accuracy plots, the model has a better performance on the training dataset than the testing dataset, which is not surprising. It has an average training accuracy of 91.75% and an average testing accuracy of 55.36%. Similarly, the training loss is much lower than the testing loss, which are 0.21 and 2.75, respectively. 
+Having such a high testing loss is not satisfying and indicates that our predictive model is not working well. With our algorithm being theoretically correct, we believed that the main reason for such a result is the use of Grayscale on the images in the beginning of data preprocessing, which caused much information lost during the transformation. 
+As we are about to utilize different training models on our dataset, we plan to reduce our loss value in a couple of ways. We will use dimension reduction methods during data preprocessing, and use regularization in our algorithm to avoid overfitting; we may also use k-fold cross validation to average test errors.
+
 
 
 <img src="https://github.com/Isobel0911/Isobel0911.github.io/blob/bdb053fbdf777ad43f335d445606267ca9c144a6/assets/css/Screenshot%202022-11-12%20205712.jpg" style="display: block; margin: auto;" />
