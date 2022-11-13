@@ -18,8 +18,8 @@ First we create four sets, which are training data, training label, testing data
 
 The dataset we have also comes in as one training set and one test set. The training/test ratio is roughly 1.5 : 8.5. 
 
-### Convolutional Neural Network 
-To classify our data, we created and trained a Convolutional Neural Network. 
+### Convolutional Neural Network 🌙
+To classify our data, we created and trained a **Convolutional Neural Network**. 
 CNNs are a class of neural networks that is suitable for classifying visual data by filtering data with convolutional layers and polling etc. 
 For convolutional layers which involves a kernel with the image to produce a feature map, which is used to present several features within the image. We used a 3x3 kernel and sought 64 filters in our model.
 Since the image may produce non-linear components when we perform gradient transitions between color and pixels etc. so in order to account for the non-linearity, we utilize the leaky_relu function in torch.nn.functional as the activation function to map the negative values to a near zero range.
@@ -28,7 +28,7 @@ We also apply the Dropout function as a regularization method in our model that 
 Finally we end the model by flatten the layer and then apply the fully connected layer to the previously flattened layer. Then we can convert the data resulting from the previous convolution layers and pooling layers to a one-dimensional vector and predict which category of snake the data should belong to.
 For optimizer, we used Adam with a learning rate of 0.001, and we used cross entropy as our loss function to help us understand how well our model performs.
 
-## Results and Discussion 
+## Results and Discussion 🌟
 We used the accuracy and loss of the predictive model to measure its performance.
 As can be seen from the accuracy plots, the model has a better performance on the training dataset than the testing dataset, which is not surprising. It has an average training accuracy of 91.75% and an average testing accuracy of 55.36%. Similarly, the training loss is much lower than the testing loss, which are 0.21 and 2.75, respectively.
 
@@ -38,8 +38,10 @@ As can be seen from the accuracy plots, the model has a better performance on th
 <img src="https://github.com/Isobel0911/Isobel0911.github.io/blob/bdb053fbdf777ad43f335d445606267ca9c144a6/assets/css/Screenshot%202022-11-12%20205809.jpg" style="display: block; margin: auto;" />
 <img src="https://github.com/Isobel0911/Isobel0911.github.io/blob/bdb053fbdf777ad43f335d445606267ca9c144a6/assets/css/Screenshot%202022-11-12%20205821.jpg" style="display: block; margin: auto;" />
 
-## Contribution Table
-_Haosheng Wu/Mingxuan Nie/Ruochen Shu_: Implement the supervised CNN model
-_Haosheng Wu_: Clean and preproccess the data
-_Dian Yang/Jiaying Deng_:Anaylsis the output of model and accuracy, evaluate current model
+## Contribution Table 🌟
+**Haosheng Wu/Mingxuan Nie/Ruochen Shu**: Implement the supervised CNN model
+
+**Haosheng Wu**: Clean and preproccess the data
+
+**Dian Yang/Jiaying Deng**:Anaylsis the output of model and accuracy, evaluate current model
 
