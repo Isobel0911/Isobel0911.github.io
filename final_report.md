@@ -58,8 +58,8 @@ In summary, while support vector machines can be used for image classification, 
 
 
 ## Contribution Table 🌟
-**Haosheng Wu/Mingxuan Nie/Ruochen Shu**: Implement the supervised CNN model
+**Haosheng Wu/Mingxuan Nie/Ruochen Shu/Dian Yang/**: Implement the supervised CNN model, Supported Vector Model
 
 **Haosheng Wu**: Clean and preproccess the data
 
-**Dian Yang/Jiaying Deng**:Anaylsis the output of model and accuracy, evaluate current model
+**Jiaying Deng**:Anaylsis the output of model and accuracy, evaluate current model; Report writing and 
