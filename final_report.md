@@ -4,15 +4,16 @@
 The snake is a widely spread species across the world. Although many snake species do not possess fatal venom, several snake classes have poison in their venom that can impair human health severely. The symptoms include tissue death swelling, bleeding and destruction of blood cells, nerve damage and even death. According to a report, between 81,000-138,000 people die from snakebite each year. Many more survive but may do so with lasting disabilities or disfigurement. The staggering statistics of causality from snakebite makes it even more imperative to identify which snakes are harmless and which are venomous. 
 
 ## Problem Definition 🌟
-To help counteract this growth in poison by snakes, we aim to use machine learning supervised learning to evaluate the image of snakes and identify venomousness. The model our group utilized is convolutional *Neural Network*.
+To help counteract this growth in poison by snakes, we aim to use machine learning supervised learning to evaluate the image of snakes and identify venomousness. We could do binary classification on our goal. The models our group utilized are *convolutional Neural Network* and *Support Vector Machine*.
 
 
 ## Data Collection 🌟
-The dataset is sourced from [Kaggle](https://www.kaggle.com/code/mpwolke/venomous-non-venomous). It contains 2044 snake images of size 400 * 400 with them labeled venomous or non-venomous. It includes a variety of snake species. We have around 87% trained data and 13% data for testing.
+The dataset is sourced from [Kaggle](https://www.kaggle.com/code/mpwolke/venomous-non-venomous). It contains 2044 snake images of size 400 * 400 with them labeled venomous or non-venomous. It includes a variety of snake species, in total 715 venomouos and 1060 non venomouos. We divided total dataset into ratio around 87% trained data and 13% data for testing.
 
 ## Methods 🌟
 ### Data Processing and Cleaning 🌙
 We collect our data, the images of snakes, from a trusted source (kaggle.com), and those images are well-labeled as venomous and non-venomous snakes and are all 3 x 400 x 400 in size.
+One thing our group taken serious consideration on is the balance of the data group used for training. If we feed mainly non-venomous data into training, our model trained may not be sufficiently representative. The model could be confused when testing on venomous snake image. We prevented this from happening through dividing training dataset into 3 : 2 ratio of non-venomous : venomous. 
 Our goal is to transform the images into the form of 1 x 40 x 40  that we can utilize in the following classification process.
 First we create four sets, which are training data, training label, testing data and testing label. In this process, we first transform the colored images to black and white images and then transform the size of image to 1 x 40 x 40. Then we add each data to the set they belong to and add  corresponding labels to the label set. We assign the non-venomous snake as label 0 and the venomous snake as label 1. Finally, we use torch.stack and torch.tensor on the data set and label set separately to put them into a single matrix, so that we can use CNN on.
 
