@@ -1,6 +1,5 @@
 # Final Report
-🐍
-## Introduction / Background ☕
+## Introduction / Background 
 The snake is a widely spread species across the world. Although many snake species do not possess fatal venom, several snake classes have poison in their venom that can impair human health severely. The symptoms include tissue death swelling, bleeding and destruction of blood cells, nerve damage and even death. According to a report, between 81,000-138,000 people die from snakebite each year. Many more survive but may do so with lasting disabilities or disfigurement. The staggering statistics of causality from snakebite makes it even more imperative to identify which snakes are harmless and which are venomous. 
 
 ## Problem Definition 🌟
@@ -8,7 +7,8 @@ To help counteract this growth in poison by snakes, we aim to use machine learni
 
 
 ## Data Collection 🌟
-The dataset is sourced from [Kaggle](https://www.kaggle.com/code/mpwolke/venomous-non-venomous). It contains 2044 snake images of size 400 * 400 with them labeled venomous or non-venomous. It includes a variety of snake species, in total 715 venomouos and 1060 non venomouos. We divided total dataset into ratio around 87% trained data and 13% data for testing.
+The dataset is sourced from [Kaggle](https://www.kaggle.com/code/mpwolke/venomous-non-venomous). It contains 2044 snake images of size 400 * 400 with them labeled venomous or non-venomous. It includes a variety of snake species, in total 715 venomous and 1060 non venomous. We divided the total dataset into a ratio around 87% trained data and 13% data for testing.
+
 
 ## Methods 🌟
 ### Data Processing and Cleaning 🌙
@@ -21,20 +21,31 @@ The dataset we have also comes in as one training set and one test set. The trai
 
 ### Convolutional Neural Network 🌙
 To classify our data, we created and trained a **Convolutional Neural Network**. 
-CNNs are a class of neural networks that is suitable for classifying visual data by filtering data with convolutional layers and polling etc. 
-For convolutional layers which involves a kernel with the image to produce a feature map, which is used to present several features within the image. We used a 3x3 kernel and sought 64 filters in our model.
+The CNNs are a class of neural networks that is suitable for classifying visual data by filtering data with convolutional layers and polling etc. 
+For convolutional layers which involve a kernel with the image to produce a feature map, which is used to present several features within the image. We used a 3x3 kernel and sought 64 filters in our model.
 Since the image may produce non-linear components when we perform gradient transitions between color and pixels etc. so in order to account for the non-linearity, we utilize the leaky_relu function in torch.nn.functional as the activation function to map the negative values to a near zero range.
 Then we use MaxPool2d function with 4x4 kernel and stride of 4 to downsample our images into a smaller one such that we can solve the problem that features exist at different precise locations in images. The MaxPool2d classifies the images over the locations of the most prominent features, and therefore we can only account for variances there. After applying this function, we have the rows and columns reduced by one-quarter while keeping the most of our features.
 We also apply the Dropout function as a regularization method in our model that will randomly drop some of the neurons of the network. With this function, the model will avoid overfitting.
 Finally we end the model by flatten the layer and then apply the fully connected layer to the previously flattened layer. Then we can convert the data resulting from the previous convolution layers and pooling layers to a one-dimensional vector and predict which category of snake the data should belong to.
-For optimizer, we used Adam with a learning rate of 0.001, and we used cross entropy as our loss function to help us understand how well our model performs.
+For optimizer, we used Adam with a learning rate of 0.001, and we used cross entropy as our loss function to help us understand how well our model performs. In the later update, we incorporate Adagrad(), Adamax() and Nadam() and get accuracy 1.00, 0.999 and 0.99 respectively. 
+
+### Support Vector Machine
+support vector machine (SVM) is a type of supervised learning algorithm that can be used for both classification and regression tasks. The goal of an SVM is to find the best decision boundary, or hyperplane, that can separate the data points in a given dataset into the desired classes. This makes SVM to be our priority choice as our goal is to do binary classification over snake venomous based on image. 
+We then transform the data points in the input space into a higher-dimensional feature space using a mathematical function called a kernel. This transformation allows the data points to be separated more easily in the higher-dimensional space, even if they are not linearly separable in the original input space. Once our data points have been transformed into the 64 x 64 dimension space, the SVM algorithm finds the hyperplane that maximizes the margin, or distance, between the data points of the different classes. This hyperplane is called the maximum-margin hyperplane. It is important to note that the SVM algorithm does not only find one decision boundary, but a whole family of decision boundaries that are all parallel and equally distant from the data points of the different classes.
+After that, we feed in test data and run 25 epochs on each testing data set. At first, the accuracy was not satisfactory, so we applied optimizer Maxpool, Conv2D and Nadam(). 
+
+
 
 ## Results and Discussion 🌟
+In summary, while support vector machines can be used for image classification, they are typically not as effective as convolutional neural networks, which are specifically designed to process grid-like data such as images. The convolutional and pooling layers in a CNN are key components that allow it to effectively extract features from images and make accurate predictions. The distinguishment between CNN and SVM can 
 We used the accuracy and loss of the predictive model to measure its performance.
-For calculating accuracy, we counted the number of correctly predicted labels divided by the total number of samples. For calculating loss, we used the cross entropy loss function for neural network built in torch.nn. We then plotted the accuracy and loss for the training set and testing set.
+For calculating accuracy, we counted the number of correctly predicted labels divided by the total number of samples. For calculating loss, we used the cross entropy loss function for the neural network built in torch.nn. We then plotted the accuracy and loss for the training set and testing set.
 As can be seen from the accuracy plots, the model has a better performance on the training dataset than the testing dataset, which is not surprising. It has an average training accuracy of 91.75% and an average testing accuracy of 55.36%. Similarly, the training loss is much lower than the testing loss, which are 0.21 and 2.75, respectively. 
 Having such a high testing loss is not satisfying and indicates that our predictive model is not working well. With our algorithm being theoretically correct, we believed that the main reason for such a result is the use of Grayscale on the images in the beginning of data preprocessing, which caused much information lost during the transformation. 
 As we are about to utilize different training models on our dataset, we plan to reduce our loss value in a couple of ways. We will use dimension reduction methods during data preprocessing, and use regularization in our algorithm to avoid overfitting; we may also use k-fold cross validation to average test errors.
+For the SVM part, our cross validation accuracy average to 65%, and average testing accuracy can score up to 85% after optimization. 
+
+
 
 
 
