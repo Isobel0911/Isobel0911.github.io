@@ -14,6 +14,7 @@ The dataset is sourced from [Kaggle](https://www.kaggle.com/code/mpwolke/venomou
 ### Data Processing and Cleaning 🌙
 We collect our data, the images of snakes, from a trusted source (kaggle.com), and those images are well-labeled as venomous and non-venomous snakes and are all 3 x 400 x 400 in size.
 One thing our group taken serious consideration on is the balance of the data group used for training. If we feed mainly non-venomous data into training, our model trained may not be sufficiently representative. The model could be confused when testing on venomous snake image. We prevented this from happening through dividing training dataset into 3 : 2 ratio of non-venomous : venomous. 
+<img src="[https://github.com/Isobel0911/Isobel0911.github.io/blob/bdb053fbdf777ad43f335d445606267ca9c144a6/assets/css/Screenshot%202022-11-12%20205712.jpg](https://github.com/Isobel0911/Isobel0911.github.io/blob/df7d0fe21c2f05a2c5ad425161ab7090db5c6da9/assets/css/data_set_plot.png)" style="display: block; margin: auto;" />
 Our goal is to transform the images into the form of 1 x 40 x 40  that we can utilize in the following classification process.
 First we create four sets, which are training data, training label, testing data and testing label. In this process, we first transform the colored images to black and white images and then transform the size of image to 1 x 40 x 40. Then we add each data to the set they belong to and add  corresponding labels to the label set. We assign the non-venomous snake as label 0 and the venomous snake as label 1. Finally, we use torch.stack and torch.tensor on the data set and label set separately to put them into a single matrix, so that we can use CNN on.
 
@@ -42,18 +43,19 @@ For calculating accuracy, we counted the number of correctly predicted labels di
 On the CNN model, as can be seen from the accuracy plots, the model has a better performance on the training dataset than the testing dataset, which is not surprising. It has an average training accuracy of 85.5% and an average testing accuracy of 65%. Similarly, the training loss is much lower than the testing loss, which are 0.21 and 2.75, respectively. 
 Having such a high testing loss is not satisfying and indicates that our predictive model is not working well. With our algorithm being theoretically correct, we believed that the main reason for such a result is the use of Grayscale on the images in the beginning of data preprocessing, which caused much information lost during the transformation. 
 As we are about to utilize different training models on our dataset, we plan to reduce our loss value in a couple of ways. We will use dimension reduction methods during data preprocessing, and use regularization in our algorithm to avoid overfitting; we may also use k-fold cross validation to average test errors.
-For the SVM part, our testing accuracy averaged to 65% and training accuracy was 85.5%. 
-There are several reasons behind the low accuracy we achieved on the SVM model. Firstly, our dataset is unbalanced, with significantly more non-venomous snake data than venomous snake. As a result, our training data is mainly composed of non-venomous snakes, impairing the accuracy on identifying venomous snakes. Secondly, in the image used for testing, some of the image is messed up with background: the snake is perfectly faded in the background, causing difficulty to identify them even by human eye! Some others have a miscellaneous background, of similar texture as snake skin which added up to the difficulty of recognizing.
+<img src="https://github.com/Isobel0911/Isobel0911.github.io/blob/de58f75ce7b60fd008df967c3c96eb30d55d215d/assets/css/cnn_acc.jpg" style="display: block; margin: auto;" />
 
+For the SVM part, our testing accuracy averaged to 65% and training accuracy was 85.5%. 
+<img src="https://github.com/Isobel0911/Isobel0911.github.io/blob/df7d0fe21c2f05a2c5ad425161ab7090db5c6da9/assets/css/Screen%20Shot%202022-12-06%20at%2012.56.22%20AM.png" style="display: block; margin: auto;" />
+
+There are several reasons behind the low accuracy we achieved on the SVM model. Firstly, our dataset is unbalanced, with significantly more non-venomous snake data than venomous snake. As a result, our training data is mainly composed of non-venomous snakes, impairing the accuracy on identifying venomous snakes. Secondly, in the image used for testing, some of the image is messed up with background: the snake is perfectly faded in the background, causing difficulty to identify them even by human eye! Some others have a miscellaneous background, of similar texture as snake skin which added up to the difficulty of recognizing.
+<img src="[https://github.com/Isobel0911/Isobel0911.github.io/blob/de58f75ce7b60fd008df967c3c96eb30d55d215d/assets/css/cnn_acc.jpg](https://github.com/Isobel0911/Isobel0911.github.io/blob/de58f75ce7b60fd008df967c3c96eb30d55d215d/assets/css/snakezs.jpg)" style="display: block; margin: auto;" />
+<img src="https://github.com/Isobel0911/Isobel0911.github.io/blob/de58f75ce7b60fd008df967c3c96eb30d55d215d/assets/css/snake_unrecoginzable.jpg" style="display: block; margin: auto;" />
 
 ## Conclusion 🌟
 In summary, while support vector machines can be used for image classification, they are typically not as effective as convolutional neural networks, which are specifically designed to process grid-like data such as images. The convolutional and pooling layers in a CNN are key components that allow it to effectively extract features from images and make accurate predictions. The distinguishment between CNN and SVM can also be seen on the accuracy we achieved, as we use the same testing dataset. The accuracy of CNN model is higher than SVM model. However, as to the aspect of computational efficiency, SVM took less time to train than CNN. 
 
 
-<img src="https://github.com/Isobel0911/Isobel0911.github.io/blob/bdb053fbdf777ad43f335d445606267ca9c144a6/assets/css/Screenshot%202022-11-12%20205712.jpg" style="display: block; margin: auto;" />
-<img src="https://github.com/Isobel0911/Isobel0911.github.io/blob/bdb053fbdf777ad43f335d445606267ca9c144a6/assets/css/Screenshot%202022-11-12%20205754.jpg" style="display: block; margin: auto;" />
-<img src="https://github.com/Isobel0911/Isobel0911.github.io/blob/bdb053fbdf777ad43f335d445606267ca9c144a6/assets/css/Screenshot%202022-11-12%20205809.jpg" style="display: block; margin: auto;" />
-<img src="https://github.com/Isobel0911/Isobel0911.github.io/blob/bdb053fbdf777ad43f335d445606267ca9c144a6/assets/css/Screenshot%202022-11-12%20205821.jpg" style="display: block; margin: auto;" />
 
 ## Contribution Table 🌟
 **Haosheng Wu/Mingxuan Nie/Ruochen Shu**: Implement the supervised CNN model
